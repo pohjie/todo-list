@@ -1,0 +1,287 @@
+/*
+  CSS reset
+*/
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+/*
+  10. Remove all styles from button
+*/
+button {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+/* 
+  Todo list app style
+*/
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+body {
+  display: grid;
+  grid-template-rows: 1fr 11fr;
+
+  color: white;
+}
+
+#header {
+  background-color: rgba(40, 42, 58, 1);
+  font-size: 36px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 12px;
+}
+
+#header .material-symbols-outlined {
+  font-size: 34px;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+
+  background-color: rgba(0,0,0, 0.5);
+}
+
+#left-col {
+  background-color: rgba(89, 89, 89, 0.5);
+
+  display: grid;
+  grid-template-rows: 1fr 9fr;
+  row-gap: 12px;
+
+  padding: 5% 10%;
+
+  font-size: 20px;
+}
+
+#left-col .material-symbols-outlined {
+  vertical-align: middle;
+  font-size: 24px;
+  position: relative;
+  top: -2px;
+  left: 0px;
+}
+
+#left-col button {
+  width: 220px;
+  padding: 4px 4px;
+  text-align: left;
+}
+
+#left-col button:hover {
+  background: grey;
+}
+
+#time-view-todo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.collapsible-project-list ul {
+  list-style-type: none;
+  padding-left: 28px;
+}
+
+
+#left-col .collapsible-project-list li button {
+  width: 190px;
+  text-align: left;
+}
+
+#newProjectName {
+  height: 46px;
+  width: 180px;
+
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+#newProjectName:focus {
+  outline: 0;
+  box-shadow: rgba(40, 42, 58, 0.2) 0px 7px 29px 0px;
+}
+
+#left-col #add-project-btn-div {
+  width: 180px;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+#left-col .add-project-field{
+  width: 80px;
+  border-radius: 10px;
+  background-color: #282A3A;
+
+  text-align: center;
+}
+
+#add-project-btn-div button:hover {
+  background: rgba(62, 63, 78, 1);
+}
+
+#project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#project-header {
+  font-size: 20px;
+  
+  padding: 8px 16px;
+}
+
+#project-header button {
+  width: 100px;
+  border-radius: 10px;
+  background-color: #282A3A;
+
+  padding: 2px 4px;
+
+  text-align: center; 
+}
+
+#project-todo {
+  font-size: 18px;
+  margin: 0 25% 0 16px;  
+}
+
+.todo-container {
+  margin: 16px 0px;
+
+  border-bottom: 1px solid white;
+  padding-bottom: 8px;
+}
+
+.todo-top-row {
+  display: grid;
+  grid-template-columns: 1fr 4fr 4fr 1fr 1fr;
+  align-items: center;
+}
+
+.todo-top-row .done-btn {
+  background-color: transparent;
+  border-style: solid;
+  border-radius: 50%;
+  border-width: 2px;
+  height: 20px;
+  width: 20px;
+}
+
+.todo-top-row .green {
+  border-color: rgb(24, 230, 24);
+}
+
+.todo-top-row .yellow {
+  border-color: rgb(239, 239, 70);
+}
+
+.todo-top-row .red {
+  border-color: rgb(232, 48, 48);
+}
+
+#add-todo-form {
+  margin: 0 25% 0 16px;
+
+  height: 60px;
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 2fr 1fr 1fr;
+  column-gap: 8px;
+
+  align-items: center;
+}
+
+#add-todo-form * {
+  height: 50px;
+
+  border-radius: 10px;
+}
+
+#title {
+  width: 180px;
+}
+
+#add-todo-notes-field::placeholder {
+  vertical-align: middle;
+}
+
+#add-todo-form button,
+#add-todo-form input[type=submit] {
+  background-color: #282A3A;
+  color: white;
+
+  border: none;
+  padding: 2px 4px;
+  text-align: center; 
+}
+
+#add-todo-form button:hover,
+#add-todo-form input:hover[type=submit]{
+  background: rgba(62, 63, 78, 1);
+}
